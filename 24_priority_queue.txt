@@ -1,0 +1,67 @@
+Priority Queue
+#include<malloc.h>
+#define MAX 5
+Struct node
+{
+	int data;
+	int iPriority;
+	struct node pNext;
+};
+
+//Function Declaration
+
+Int main(void){
+	Struct node *pPQueue = NULL;
+	EnQueue(&pPQueue, 10, 4);
+	EnQueue(&pPQueue, 20, 2);
+	EnQueue(&pPQueue, 30, 5);
+	EnQueue(&pPQueue, 40, 3);
+	EnQueue(&pPQueue, 50, 1);
+	Display(pPQueue); //30, 10, 40, 20, 50
+	printf(“Deleted Data is %d DeQueue(&pPQueue)”);
+	Display(pPQueue);
+	If(pPQueue == NULL){
+		DeleteAll(&pPQueue);
+		&pPQueue==NULL
+	}
+	Return 0;
+}
+
+void EnQueue(struct node **ppHead, int iNo, int pPri)
+{
+	struct node *pTemp = NULL;
+	struct node *pNewNode = NULL;
+	if(NULL == *ppHead || iPri > (*ppHead) -> iPriority){
+		InsertFirst(ppHead, iNo, Ipri);
+		return;
+	}
+
+	pNewNode = (struct node *) malloc(sizeof(structnode));
+	if(NULL == pNewNode)){
+		printf("Memory Allocation FAIL D");
+		return;
+	}
+
+	pNewNode -> iData = iNO;
+	pNewNode ->iPriority = iPri;
+	pTemp = *ppHead;
+	while(pTemp -> pNext != NULL){
+		if(iPri > pTemp -> pNext -> iPriority){
+			break;
+		pTemp = pTemp -> pNext;
+	}	
+
+	pNewNode -> pNext = pTemp -> pNext;
+	pTempc -> pNext = pNewNode;
+}
+
+
+
+
+
+
+
+
+
+
+
